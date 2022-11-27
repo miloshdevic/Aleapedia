@@ -1,0 +1,90 @@
+Ce fichier contient un exemple d'utilisation de la librairie pour
+générer du texte aléatoirement.
+
+Voici de quoi doit avoir l'air le modèle créé par votre fonction
+creerModele() :
+
+    var corpus = readFile('corpus/trivial');
+    var modele = creerModele(corpus);
+    console.log(modele.dictionnaire);
+    // => [ '', 'A', 'B', 'C.', 'A.', 'C' ]
+
+    console.log(modele.prochainsMots);
+    /* =>
+    [
+      [
+        { mot: 'A', prob: 0.6666666666666666 },
+        { mot: 'C', prob: 0.3333333333333333 }
+      ],
+      [ { mot: 'B', prob: 1 } ],
+      [
+        { mot: 'A.', prob: 0.6666666666666666 },
+        { mot: 'C.', prob: 0.3333333333333333 }
+      ],
+      [],
+      [],
+      [ { mot: 'B', prob: 1 } ]
+    ]
+    */
+
+--------------------------------------------------
+
+Un exemple d'utilisation de ce même modèle pourrait être :
+
+    // On génère 50 phrases au hasard à partir du corpus "trivial"
+    for(var i=0; i<50; i++) {
+        console.log(genererPhrase(modele, 30));
+    }
+
+    /* Phrases affichées (un exemple possible) :
+    C B A.
+    A B A.
+    C B A.
+    A B A.
+    C B A.
+    C B A.
+    A B C.
+    A B A.
+    A B A.
+    C B A.
+    A B A.
+    A B A.
+    C B A.
+    A B C.
+    A B A.
+    C B A.
+    A B A.
+    C B C.
+    A B A.
+    A B A.
+    A B C.
+    A B A.
+    C B A.
+    C B A.
+    C B A.
+    C B C.
+    C B A.
+    A B C.
+    A B A.
+    A B A.
+    A B A.
+    C B A.
+    A B C.
+    A B C.
+    C B C.
+    A B A.
+    A B A.
+    A B A.
+    A B A.
+    C B C.
+    C B C.
+    C B A.
+    A B A.
+    A B C.
+    A B A.
+    A B C.
+    C B A.
+    C B C.
+    C B A.
+    A B A.
+    */
