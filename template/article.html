@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Aléapédia : {{titre}}</title>
+        <link rel="stylesheet" type="text/css" href="/style.css" />
+        <script src="/menu.js"></script>
+    </head>
+    <body>
+        <div id="document">
+            <div id="menu">
+                <a href="/index.html">Accueil</a> |
+                <a href="/random">Article au hasard</a> |
+                <label>
+                    Lire un article: <input id="lire-article-nom" type="text">
+                    <button id="lire-article-btn">
+                        Lire!
+                    </button>
+                </label>
+            </div>
+            <div id="content">
+                <h1>{{titre}}</h1>
+
+                <img src="{{img}}" style="max-width: 500px; max-height: 500px; float: right;" />
+
+                {{{contenu}}}
+            </div>
+            <footer>
+                <span class="copyleft">&copy;</span> Copywrong Aléapédia - 2019
+            </footer>
+        </div>
+    </body>
+</html>
